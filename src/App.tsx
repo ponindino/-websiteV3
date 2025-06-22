@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import SplashScreen from "./components/SplashScreen";
 import Footer from "./components/Footer";
@@ -7,6 +8,24 @@ import Portfolio from "./components/Portfolio";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
+=======
+// src/App.tsx
+
+
+import { useState, useEffect } from "react";
+
+import { useState } from "react";
+
+import LandingGrid from "./components/LandingGrid";
+import Journey from "./components/Journey";
+import Portfolio from "./components/Portfolio";
+import Footer from "./components/Footer";
+import SplashScreen from "./components/SplashScreen";
+
+export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+
   const [bgColor, setBgColor] = useState('rgb(247,247,249)');
 
   useEffect(() => {
@@ -25,6 +44,7 @@ export default function App() {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   if (showSplash) {
     return <SplashScreen onFinish={() => setShowSplash(false)} />;
