@@ -110,7 +110,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-cream-50 to-wood-50 py-20">
+    <section id="portfolio" className="min-h-screen bg-gradient-to-b from-cream-50 to-wood-50 py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-playfair text-5xl md:text-6xl font-bold text-wood-800 mb-6">
