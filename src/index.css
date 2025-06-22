@@ -120,3 +120,12 @@
 .animate-float {
   animation: floatUp 3s ease-in-out infinite;
 }
+
+/* Subtle 3D tilt on hover */
+.tilt-in {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+.tilt-in:hover {
+  transform: perspective(800px) rotateX(-5deg) rotateY(0deg);
+}

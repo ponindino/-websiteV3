@@ -9,13 +9,13 @@ export default function LandingGrid() {
         <div className="grid grid-cols-12 grid-rows-6 gap-6 h-[93vh]">
 
           {/* Küchen-Slideshow */}
-          <div className="col-span-7 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative">
+          <div className="col-span-7 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative tilt-in">
             <KitchenSlideshow />
             <div className="absolute inset-0 bg-black/10 pointer-events-none rounded-2xl" />
           </div>
 
           {/* Vertikaler Satz: Machs dir selbst mit Hintergrundbild */}
-          <div className="col-start-8 col-span-1 row-span-4 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden">
+          <div className="col-start-8 col-span-1 row-span-4 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden tilt-in">
             <img
               src="/kitchens/landingbeige.png"
               alt=""
@@ -28,13 +28,13 @@ export default function LandingGrid() {
           </div>
 
           {/* Flur-Slideshow */}
-          <div className="col-start-9 col-span-4 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative">
+          <div className="col-start-9 col-span-4 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative tilt-in">
             <FlurSlideshow />
             <div className="absolute inset-0 bg-black/10 pointer-events-none rounded-2xl" />
           </div>
 
           {/* Firmenname: Küchenseele mit Bildhintergrund */}
-          <div className="col-span-7 row-start-5 row-span-2 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden">
+          <div className="col-span-7 row-start-5 row-span-2 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden tilt-in">
             <img
               src="/kitchens/namebg.png"
               alt=""
@@ -51,7 +51,7 @@ export default function LandingGrid() {
             {["fibo1", "fibo2", "fibo3", "fibo4"].map((fibo) => (
               <div
                 key={fibo}
-                className="rounded-xl overflow-hidden aspect-square w-full h-full flex items-center justify-center bg-gray-100"
+                className="rounded-xl overflow-hidden aspect-square w-full h-full flex items-center justify-center bg-gray-100 tilt-in"
               >
                 <img
                   src={`/kitchens/${fibo}.png`}
@@ -72,7 +72,7 @@ export default function LandingGrid() {
           </div>
 
           {/* Beratung starten Kachel */}
-          <div className="col-start-11 col-span-1 row-start-5 row-span-2 flex items-center justify-center">
+          <div className="col-start-11 col-span-1 row-start-5 row-span-2 flex items-center justify-center tilt-in">
             <div
               className="w-full h-full rounded-2xl flex items-center justify-center"
               style={{
@@ -90,7 +90,7 @@ export default function LandingGrid() {
           </div>
 
           {/* Drück mich Button (gleiche Größe, rechts daneben) */}
-          <div className="col-start-12 col-span-1 row-start-5 row-span-2 flex items-center justify-center">
+          <div className="col-start-12 col-span-1 row-start-5 row-span-2 flex items-center justify-center tilt-in">
             <div
               className="w-full h-full rounded-2xl flex items-center justify-center bg-black shadow-lg"
             >
