@@ -4,6 +4,7 @@
 import { useState } from "react";
 import LandingGrid from "./components/LandingGrid";
 import Journey from "./components/Journey";
+import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import SplashScreen from "./components/SplashScreen";
 
@@ -18,6 +19,7 @@ export default function App() {
     <div className="bg-[#f7f7f9] min-h-screen">
       <LandingGrid />
       <Journey />
+      <Portfolio />
       <Footer />
     </div>
   );
