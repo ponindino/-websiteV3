@@ -6,11 +6,12 @@ interface JourneySectionProps {
   title: string;
   subtitle: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
+  videoUrl?: string;
   isReversed?: boolean;
 }
 
-const JourneySection = ({ step, title, subtitle, description, imageUrl, isReversed = false }: JourneySectionProps) => {
+const JourneySection = ({ step, title, subtitle, description, imageUrl, videoUrl, isReversed = false }: JourneySectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [textAnimationPhase, setTextAnimationPhase] = useState(0);
@@ -134,10 +135,10 @@ const JourneySection = ({ step, title, subtitle, description, imageUrl, isRevers
           </div>
 
           {/* Image - 40% width */}
-          <div 
+          <div
             className={`lg:w-2/5 transition-all duration-1200 ${
-              isVisible 
-                ? 'opacity-100 translate-y-0 scale-100' 
+              isVisible
+                ? 'opacity-100 translate-y-0 scale-100'
                 : 'opacity-0 translate-y-8 scale-95'
             }`}
             style={{
@@ -146,13 +147,24 @@ const JourneySection = ({ step, title, subtitle, description, imageUrl, isRevers
             }}
           >
             <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
-              <img
-                src={imageUrl}
-                alt={title}
-                className="w-full h-80 md:h-96 object-cover transform group-hover:scale-110 transition-transform duration-700"
-              />
+              {videoUrl ? (
+                <video
+                  src={videoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-80 md:h-96 object-cover"
+                />
+              ) : (
+                <img
+                  src={imageUrl}
+                  alt={title}
+                  className="w-full h-80 md:h-96 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-wood-900/30 via-transparent to-transparent"></div>
-              
+
               {/* Floating decorative elements */}
               <div className="absolute -top-4 -right-4 w-8 h-8 bg-wood-400 rounded-full opacity-60 animate-pulse"></div>
               <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-cream-400 rounded-full opacity-40"></div>
