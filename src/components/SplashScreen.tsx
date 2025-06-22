@@ -1,6 +1,11 @@
-import { useRef } from "react";
+import { useEffect } from "react";
 
 export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
+  useEffect(() => {
+    const timer = setTimeout(onFinish, 6000);
+    return () => clearTimeout(timer);
+  }, [onFinish]);
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black overflow-hidden">
       <video
