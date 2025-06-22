@@ -1,3 +1,14 @@
+
+import { useState, useEffect } from "react";
+import SplashScreen from "./components/SplashScreen";
+import Footer from "./components/Footer";
+import Journey from "./components/Journey";
+import LandingGrid from "./components/LandingGrid";
+import Portfolio from "./components/Portfolio";
+
+export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+=======
 // src/App.tsx
 
 
@@ -13,6 +24,7 @@ import SplashScreen from "./components/SplashScreen";
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
+
 
   const [bgColor, setBgColor] = useState('rgb(247,247,249)');
 
@@ -50,3 +62,4 @@ export default function App() {
     </div>
   );
 }
+
