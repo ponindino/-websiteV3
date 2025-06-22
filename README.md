@@ -10,4 +10,3 @@ Der Quellcode steht unter der [MIT-Lizenz](./LICENSE).
 
 - Die Beispielbilder stammen von [Unsplash](https://unsplash.com) und unterliegen der Unsplash-Lizenz.
 - Die Schriftarten werden über [Google Fonts](https://fonts.google.com/) eingebunden.
-
