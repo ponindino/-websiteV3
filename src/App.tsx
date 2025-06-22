@@ -1,4 +1,5 @@
 // src/App.tsx
+// Resolved merge conflict: keep the new Journey component
 
 import LandingGrid from "./components/LandingGrid";
 import Journey from "./components/Journey";
