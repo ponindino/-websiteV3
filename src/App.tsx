@@ -1,5 +1,4 @@
 // src/App.tsx
-// Resolved merge conflict: keep the new Journey component
 
 import { useState } from "react";
 import LandingGrid from "./components/LandingGrid";
