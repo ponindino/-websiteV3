@@ -6,11 +6,22 @@ interface JourneySectionProps {
   title: string;
   subtitle: string;
   description: string;
-  imageUrl: string;
+  /** Optional image to display if no video is provided */
+  imageUrl?: string;
+  /** Optional video to display instead of an image */
+  videoUrl?: string;
   isReversed?: boolean;
 }
 
-const JourneySection = ({ step, title, subtitle, description, imageUrl, isReversed = false }: JourneySectionProps) => {
+const JourneySection = ({
+  step,
+  title,
+  subtitle,
+  description,
+  imageUrl,
+  videoUrl,
+  isReversed = false,
+}: JourneySectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [textAnimationPhase, setTextAnimationPhase] = useState(0);
@@ -146,11 +157,22 @@ const JourneySection = ({ step, title, subtitle, description, imageUrl, isRevers
             }}
           >
             <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
-              <img
-                src={imageUrl}
-                alt={title}
-                className="w-full h-80 md:h-96 object-cover transform group-hover:scale-110 transition-transform duration-700"
-              />
+              {videoUrl ? (
+                <video
+                  src={videoUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-80 md:h-96 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              ) : (
+                <img
+                  src={imageUrl}
+                  alt={title}
+                  className="w-full h-80 md:h-96 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-wood-900/30 via-transparent to-transparent"></div>
               
               {/* Floating decorative elements */}
