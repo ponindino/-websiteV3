@@ -9,13 +9,13 @@ export default function LandingGrid() {
         <div className="grid grid-cols-12 grid-rows-6 gap-6 h-[93vh]">
 
           {/* Küchen-Slideshow */}
-          <div className="col-span-7 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative transform transition-transform duration-300 tilt-in">
+          <div className="col-span-7 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative">
             <KitchenSlideshow />
             <div className="absolute inset-0 bg-black/10 pointer-events-none rounded-2xl" />
           </div>
 
           {/* Vertikaler Satz: Machs dir selbst mit Hintergrundbild */}
-          <div className="col-start-8 col-span-1 row-span-4 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden transform transition-transform duration-300 tilt-in">
+          <div className="col-start-8 col-span-1 row-span-4 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden">
             <img
               src="/kitchens/landingbeige.png"
               alt=""
@@ -28,13 +28,13 @@ export default function LandingGrid() {
           </div>
 
           {/* Flur-Slideshow */}
-          <div className="col-start-9 col-span-4 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative transform transition-transform duration-300 tilt-in">
+          <div className="col-start-9 col-span-4 row-span-4 bg-white rounded-2xl shadow-lg flex items-center justify-center overflow-hidden relative">
             <FlurSlideshow />
             <div className="absolute inset-0 bg-black/10 pointer-events-none rounded-2xl" />
           </div>
 
           {/* Firmenname: Küchenseele mit Bildhintergrund */}
-          <div className="col-span-7 row-start-5 row-span-2 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden transform transition-transform duration-300 tilt-in">
+          <div className="col-span-7 row-start-5 row-span-2 rounded-2xl shadow-lg flex items-center justify-center relative overflow-hidden">
             <img
               src="/kitchens/namebg.png"
               alt=""
@@ -47,16 +47,16 @@ export default function LandingGrid() {
           </div>
 
           {/* Materialien: 4 Kacheln mit perfekt skalierten Bildern */}
-          <div className="col-start-8 col-span-3 row-start-5 row-span-2 bg-white rounded-2xl shadow-lg grid grid-cols-2 grid-rows-2 gap-3 p-4 transform transition-transform duration-300 tilt-in">
+          <div className="col-start-8 col-span-3 row-start-5 row-span-2 bg-white rounded-2xl shadow-lg grid grid-cols-2 grid-rows-2 gap-3 p-4">
             {["fibo1", "fibo2", "fibo3", "fibo4"].map((fibo) => (
               <div
                 key={fibo}
-                className="rounded-xl overflow-hidden aspect-square w-full h-full flex items-center justify-center bg-gray-100 group"
+                className="rounded-xl overflow-hidden aspect-square w-full h-full flex items-center justify-center bg-gray-100"
               >
                 <img
                   src={`/kitchens/${fibo}.png`}
                   alt=""
-                  className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:-rotate-2"
+                  className="w-full h-full object-cover object-center transition-transform duration-300"
                   draggable={false}
                   style={{
                     width: "100%",
@@ -65,9 +65,7 @@ export default function LandingGrid() {
                     objectPosition: "center",
                     display: "block",
                   }}
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.opacity = "0.2";
-                  }}
+                  onError={e => { (e.target as HTMLImageElement).style.opacity = "0.2" }}
                 />
               </div>
             ))}
@@ -76,7 +74,7 @@ export default function LandingGrid() {
           {/* Beratung starten Kachel */}
           <div className="col-start-11 col-span-1 row-start-5 row-span-2 flex items-center justify-center">
             <div
-              className="w-full h-full rounded-2xl flex items-center justify-center transform transition-transform duration-300 tilt-in"
+              className="w-full h-full rounded-2xl flex items-center justify-center"
               style={{
                 background: 'linear-gradient(135deg, #36432B 70%, #463727 100%)',
                 boxShadow: '0 4px 24px rgba(54,67,43,0.10)',
@@ -94,7 +92,7 @@ export default function LandingGrid() {
           {/* Drück mich Button (gleiche Größe, rechts daneben) */}
           <div className="col-start-12 col-span-1 row-start-5 row-span-2 flex items-center justify-center">
             <div
-              className="w-full h-full rounded-2xl flex items-center justify-center bg-black shadow-lg transform transition-transform duration-300 tilt-in"
+              className="w-full h-full rounded-2xl flex items-center justify-center bg-black shadow-lg"
             >
               <button
                 className="w-full h-full text-white text-xl font-semibold flex flex-col items-center justify-center focus:outline-none"
