@@ -51,12 +51,12 @@ export default function LandingGrid() {
             {["fibo1", "fibo2", "fibo3", "fibo4"].map((fibo) => (
               <div
                 key={fibo}
-                className="rounded-xl overflow-hidden aspect-square w-full h-full flex items-center justify-center bg-gray-100"
+                className="rounded-xl overflow-hidden aspect-square w-full h-full flex items-center justify-center bg-gray-100 group"
               >
                 <img
                   src={`/kitchens/${fibo}.png`}
                   alt=""
-                  className="w-full h-full object-cover object-center transition-transform duration-300"
+                  className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:-rotate-2"
                   draggable={false}
                   style={{
                     width: "100%",
@@ -65,7 +65,9 @@ export default function LandingGrid() {
                     objectPosition: "center",
                     display: "block",
                   }}
-                  onError={e => { (e.target as HTMLImageElement).style.opacity = "0.2" }}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.opacity = "0.2";
+                  }}
                 />
               </div>
             ))}
